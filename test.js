@@ -15,14 +15,6 @@ function rollDice() {
   scoreElement.textContent = score;
 }
 
-// Function to calculate the score
-function calculateScore(rolls) {
-  // TODO: Implement the scoring logic
-  // This function should return the total score based on the dice rolls.
-  // Refer to the rules of the Ferengi Game of Daboo to determine the scoring logic.
-  // You can use conditional statements, loops, and other JavaScript features to calculate the score.
-  // Feel free to define additional helper functions if needed.
-}
 
 // Event listener for the "Roll Dice" button
 const rollButton = document.getElementById('roll-button');
@@ -60,6 +52,8 @@ function rollDice() {
   const score = calculateScore(rolls);
   scoreElement.textContent = score;
 
+  playSoundEffect('sound.wav');
+
   // Check win/lose conditions
   if (score >= 100) {
     alert('Congratulations! You won!');
@@ -79,4 +73,9 @@ function resetGame() {
 
   // Reset the score
   scoreElement.textContent = '0';
+}
+
+function playSoundEffect(soundFile) {
+  var audio = new Audio('sounds/' + soundFile);
+  audio.play();
 }
