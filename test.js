@@ -75,6 +75,12 @@ function resetGame() {
   scoreElement.textContent = '0';
 }
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    rollDice();
+  }
+});
+
 function playSoundEffect(soundFile) {
   var audio = new Audio('sounds/' + soundFile);
   audio.play();
